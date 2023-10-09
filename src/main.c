@@ -31,10 +31,10 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     wc.hbrBackground = (HBRUSH)GetStockObject(WHITE_BRUSH);
     RegisterClass(&wc);
 
-    HWND hwnd =
-        CreateWindowEx(0, L"INSOM_WNDCLASS", L"INSOM", WS_OVERLAPPEDWINDOW,
-                       CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
-                       CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
+    HWND hwnd = CreateWindowEx(WS_EX_CLIENTEDGE, L"INSOM_WNDCLASS", L"INSOM",
+                               WS_OVERLAPPEDWINDOW, CW_USEDEFAULT,
+                               CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+                               NULL, NULL, hInstance, NULL);
     if (hwnd == NULL) return -1;
 
     label = CreateWindowEx(0, L"STATIC", L"IDK",
