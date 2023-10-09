@@ -15,6 +15,7 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
             WORD h = HIWORD(lParam);
             MoveWindow(label, 0, 0, w, h, 1);
             break;
+        case WM_LBUTTONUP:
         case WM_CLOSE:
             PostQuitMessage(0);
             break;
@@ -56,11 +57,12 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 
     SetProcessDPIAware();
 
-    HWND hwnd = CreateWindowEx(
-        WS_EX_CLIENTEDGE | WS_EX_NOACTIVATE | WS_EX_APPWINDOW | WS_EX_TOPMOST,
-        L"INSOM_WNDCLASS", L".beat Clock", WS_OVERLAPPED | WS_BORDER,
-        CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT, NULL, NULL,
-        hInstance, NULL);
+    HWND hwnd =
+        CreateWindowEx(WS_EX_CLIENTEDGE | WS_EX_NOACTIVATE | WS_EX_APPWINDOW |
+                           WS_EX_PALETTEWINDOW,
+                       L"INSOM_WNDCLASS", L".beat", WS_OVERLAPPED | WS_BORDER,
+                       CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
+                       CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
     if (hwnd == NULL) return -1;
 
     label = CreateWindowEx(0, L"STATIC", L"IDK",
