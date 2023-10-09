@@ -5,7 +5,7 @@ A self-contained Win32 program which shows the current [Swatch Internet Time][1]
 
 It's an always-on-top window. Click on the text to exit.
 
-![Screenshot](https://github.com/insom/w32bar/blob/main/screenshot.png?raw=true)
+![Screenshot](https://github.com/insom/w32beat/blob/main/screenshot.png?raw=true)
 
 [1]: https://en.wikipedia.org/wiki/Swatch_Internet_Time
 
