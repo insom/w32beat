@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
 set(CMAKE_WIN32_EXECUTABLE true)
 
-project(hw32)
+project(w32beat)
 
 # include_directories(include)
 
