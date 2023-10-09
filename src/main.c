@@ -1,10 +1,18 @@
 #define UNICODE
 #include <windows.h>
 
+HWND label;
+
 LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
     switch (uMsg) {
         case WM_CREATE:
             SetWindowPos(hwnd, NULL, 0, 0, 300, 300, SWP_NOMOVE);
+            break;
+        case WM_SIZE:
+            WORD w = LOWORD(lParam);
+            WORD h = HIWORD(lParam);
+            SetWindowText(label, L"Hello, world!");
+            MoveWindow(label, 0, 0, w, h, 1);
             break;
         case WM_CLOSE:
             PostQuitMessage(0);
@@ -28,6 +36,11 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
                        CW_USEDEFAULT, CW_USEDEFAULT, CW_USEDEFAULT,
                        CW_USEDEFAULT, NULL, NULL, hInstance, NULL);
     if (hwnd == NULL) return -1;
+
+    label = CreateWindowEx(0, L"STATIC", L"IDK",
+                           SS_CENTER | SS_CENTERIMAGE | WS_VISIBLE | WS_CHILD,
+                           0, 0, 300, 300, hwnd, NULL, hInstance, NULL);
+    if (label == NULL) return -1;
 
     ShowWindow(hwnd, nCmdShow);
 
