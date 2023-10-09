@@ -9,6 +9,8 @@ It's an always-on-top window. Click on the text to exit.
 
 [1]: https://en.wikipedia.org/wiki/Swatch_Internet_Time
 
+**Note**: the "big clock" in the background is WACUP's own .beat time clock, which I verified mine against. For scale, I guess?
+
 License
 -------
 
