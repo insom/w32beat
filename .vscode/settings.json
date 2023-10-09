@@ -1,0 +1,6 @@
+{
+    "C_Cpp.default.compilerPath": "/usr/bin/x86_64-w64-mingw32-gcc-win32",
+    "editor.formatOnSave": true,
+    "C_Cpp.clang_format_style": "{ IndentWidth: 4, TabWidth: 4, ContinuationIndentWidth: 4, IndentCaseLabels: true, IndentCaseBlocks: false, AllowShortIfStatementsOnASingleLine: WithoutElse }",
+    "C_Cpp.clang_format_fallbackStyle": "Google"
+}
